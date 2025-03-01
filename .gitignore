@@ -1,0 +1,31 @@
+# Compiled files
+bin/
+obj/
+
+# Rider & JetBrains
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ASP.NET Secrets
+secrets/
+
+# Logs
+*.log
+logs/
+
+# Database local files
+*.mdf
+*.ldb
+*.sqlite
+*.db
+
+# Visual Studio generated
+.vs/
+
+# Dotnet tools and packages
+*.nupkg
+*.snupkg
+.nuget/
