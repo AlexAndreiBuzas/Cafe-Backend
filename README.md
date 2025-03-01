@@ -16,7 +16,7 @@ Café application backend - REST API for managing orders and reservations.
 ## Configuration
 1. Clone the repo:
 ```
-git clone https://github.com/user/Cafe-Backend.git
+git clone https://github.com/AlexAndreiBuzas/Cafe-Backend.git
 ```
 2. Open with JetBrains Rider
 3. Run migrations and start the server
