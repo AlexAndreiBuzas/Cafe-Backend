@@ -31,22 +31,22 @@ dotnet ef database update
 ```   
 
 ## 📌 Endpoints Overview
-#🔐 Authentication (/api/auth)
+## 🔐 Authentication (/api/auth)
  -	**POST /api/auth/register** → Register a new user (Client or Barista)
  -	**POST /api/auth/login** → Authenticate and receive a JWT token
-#🛠 Barista Dashboard (/api/dashboard)
+## 🛠 Barista Dashboard (/api/dashboard)
  -	**GET /api/dashboard/order**s → View all active orders (Barista only)
  -	**GET /api/dashboard/reservations** → View pending reservations (Barista only)
  -	**GET /api/dashboard/summary** → Get total orders & reservations overview
-#☕ Coffee Menu (/api/coffee-options)
+## ☕ Coffee Menu (/api/coffee-options)
  -	**GET /api/coffee-options/types** → Get predefined coffee types
  -	**GET /api/coffee-options/customizations** → Get available customization options
-#🛒 Orders (/api/orders)
+## 🛒 Orders (/api/orders)
  -	**POST /api/orders** → Place a coffee order
  -	**GET /api/orders/my-orders** → View your orders
  -	**GET /api/orders/all** → View all orders (Barista only)
  -	**PATCH /api/orders/{orderId}** → Update order status (e.g., “Ready”)
-#📅 Table Reservations (/api/reservations)
+## 📅 Table Reservations (/api/reservations)
  -	**POST /api/reservations** → Create a reservation
  -	**GET /api/reservations/my** → View your reservations
  -	**GET /api/reservations/all** → View all reservations (Barista only)
@@ -55,5 +55,5 @@ dotnet ef database update
  -	**GET /api/reservations/upcoming** → View upcoming reservations
 
 ## 🚀 Future Improvements
-🔄 [ ] Implement JWT Refresh Tokens (Automatic session renewal)
-🧪 [ ] Add unit & integration tests (Ensure stability)
+- 🔄 Implement JWT Refresh Tokens (Automatic session renewal)
+- 🧪 [ ] Add unit & integration tests (Ensure stability)
