@@ -57,4 +57,11 @@ public class OrderService(AppDbContext context) : IOrderService
             .AsNoTracking()
             .ToListAsync();
     }
+    
+    public async Task<Order?> GetOrderByPickupCodeAsync(string pickupCode)
+    {
+        return await _context.Orders
+            .Include(o => o.User)
+            .FirstOrDefaultAsync(o => o.PickupCode == pickupCode);
+    }
 }

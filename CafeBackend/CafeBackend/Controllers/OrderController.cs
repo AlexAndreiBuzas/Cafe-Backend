@@ -24,6 +24,7 @@ public class OrderController(IOrderService orderService, IAuthService authServic
         return CreatedAtAction(nameof(PlaceOrder), new OrderResponse
         {
             Id = order.Id,
+            PickupCode = order.PickupCode,
             CoffeeType = order.CoffeeType,
             Size = order.Size,
             Customizations = order.Customizations,
@@ -58,5 +59,24 @@ public class OrderController(IOrderService orderService, IAuthService authServic
         if (!updated) return NotFound(new { message = "Order not found" });
 
         return Ok(new { message = "Order status updated!" });
+    }
+    
+    [HttpGet("pickup/{pickupCode}")]
+    public async Task<IActionResult> GetOrderByPickupCode(string pickupCode)
+    {
+        var order = await _orderService.GetOrderByPickupCodeAsync(pickupCode);
+
+        if (order == null)
+            return NotFound(new { message = "Invalid pickup code" });
+
+        return Ok(new
+        {
+            orderId = order.Id,
+            clientName = order.User?.Name,
+            coffeeType = order.CoffeeType,
+            size = order.Size,
+            customizations = order.Customizations,
+            status = order.Status
+        });
     }
 }
