@@ -30,7 +30,7 @@ public class OrderService(AppDbContext context) : IOrderService
             UserId = userId,
             CoffeeType = request.CoffeeType,
             Size = request.Size,
-            Customizations = request.Customizations ?? "",
+            Customizations = request.Customizations != null ? string.Join(", ", request.Customizations) : "",
             Status = "Pending",
             CreatedAt = DateTime.UtcNow
         };
